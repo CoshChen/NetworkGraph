@@ -7,8 +7,6 @@
 
 #include "Graph.h"
 
-//using namespace std;
-
 // member functions
 void Graph::addVertex(Node* vertex){
 	if(id_dict.count(vertex -> getId()) != 0){
