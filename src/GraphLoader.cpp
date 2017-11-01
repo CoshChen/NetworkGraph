@@ -29,6 +29,7 @@ Graph GraphLoader::readFile(string path){
 
 	while(std::getline(inFile, line)){
 		if(line.size() == 0 && nodeConstructed){
+		//End of the block.
 			result.addVertex(curr);
 			hasTitle = false;
 			hasYear = false;
@@ -64,6 +65,8 @@ Graph GraphLoader::readFile(string path){
 		result.addVertex(curr);
 		nodeConstructed = false;
 	}
+	
+	inFile.close();
 
 	return result;
 }
