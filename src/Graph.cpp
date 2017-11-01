@@ -48,7 +48,7 @@ void Graph::addEdge(Node* from, Node* to){
 	}
 
 	in_adjList[to_id].insert(from_id);
-	from -> add_out_neighbor(*to);
+	from -> add_out_neighbor(to -> getId());
 }
 
 Node* Graph::getNode(int id){

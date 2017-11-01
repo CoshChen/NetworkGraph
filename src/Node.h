@@ -18,17 +18,18 @@ using namespace std;
 
 class Node {
 private:
-	int id;
+	int id = 0;
 	double label = 0.0;
 	set<int> out_neighbors;
 	unordered_map<string, string> features;
 	vector<string> featureFields;
 
 public:
+	Node(){};
 	Node(int id);
 
 	void setLabel(double n){label = n;}
-	void add_out_neighbor(Node to);
+	void add_out_neighbor(int to);
 	void setFeature(string field, string value);
 
 	int getId(){return id;}

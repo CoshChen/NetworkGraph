@@ -14,8 +14,8 @@ Node::Node(int id){
 
 
 // member functions
-void Node::add_out_neighbor(Node to){
-	out_neighbors.insert(to.getId());
+void Node::add_out_neighbor(int to){
+	out_neighbors.insert(to);
 }
 
 void Node::setFeature(string field, string value){

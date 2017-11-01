@@ -9,6 +9,9 @@
 #define TEST_H_
 
 #include "Graph.h"
+#include "GraphLoader.h"
+
+using namespace std;
 
 void printAdjMatrix(const unordered_map<int, set<int>>& adjList){
 	for(auto v : adjList){
@@ -28,11 +31,11 @@ void test_1(){
 	Node c = Node(3);
 
 	a.setLabel(5.0);
-	a.add_out_neighbor(b);
-	a.add_out_neighbor(c);
+	a.add_out_neighbor(b.getId());
+	a.add_out_neighbor(c.getId());
 
 	b.setLabel(2.0);
-	b.add_out_neighbor(c);
+	b.add_out_neighbor(c.getId());
 
 	test.addVertex(&a);
 	test.addVertex(&b);
@@ -55,6 +58,14 @@ void test_1(){
 	cout << a.getId() << ": " << a.get_out_neighbors().size() << endl;
 	cout << b.getId() << ": " << b.get_out_neighbors().size() << endl;
 	cout << c.getId() << ": " << c.get_out_neighbors().size() << endl;
+}
+
+void test_2(){
+	GraphLoader loadTest;
+	string path = "C:/Users/KC/Documents/Cpp/NetworkGraph/src/resources/acm.txt";
+
+	Graph test = loadTest.readFile(path);
+	cout << test.getVertices().size() << endl;
 }
 
 #endif /* TEST_H_ */
