@@ -1,5 +1,6 @@
 Data can be downloaded from: http://aminer.org/lab-datasets/citation/citation-network1.zip
 
+The data is a text file containing blocks that one for each paper.  
 For each block, each line starting with a specific prefix indicates an attribute of the paper. More specifically,
 
 #* --- paperTitle
