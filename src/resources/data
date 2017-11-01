@@ -1,0 +1,11 @@
+Data can be downloaded from: http://aminer.org/lab-datasets/citation/citation-network1.zip
+
+For each block, each line starting with a specific prefix indicates an attribute of the paper. More specifically,
+
+#* --- paperTitle
+#@ --- Authors
+#t ---- Year
+#c  --- publication venue
+#index 00---- index id of this paper
+#% ---- the id of references of this paper (there are multiple lines, with each indicating a reference)
+#! --- Abstract
