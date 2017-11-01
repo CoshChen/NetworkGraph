@@ -16,6 +16,8 @@ Graph GraphLoader::readFile(string path){
 		cout << "File does not exist." << endl;
 		return result;
 	}
+	
+	// In the file, the order of information provided is: title, year, id, out_neighbors (reference paper ids).
 
 	string line;
 	string title;
@@ -29,7 +31,7 @@ Graph GraphLoader::readFile(string path){
 
 	while(std::getline(inFile, line)){
 		if(line.size() == 0 && nodeConstructed){
-		//End of the block.
+		// End of the block. Add current Node to the graph.
 			result.addVertex(curr);
 			hasTitle = false;
 			hasYear = false;
@@ -62,6 +64,7 @@ Graph GraphLoader::readFile(string path){
 	}
 
 	if(nodeConstructed){
+	// Catch the last block if there is no blank line after it.
 		result.addVertex(curr);
 		nodeConstructed = false;
 	}
