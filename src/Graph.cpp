@@ -22,8 +22,8 @@ void Graph::addVertex(Node* vertex){
 
 	for(auto to : out_neighbors){
 		if(in_adjList.count(to) == 0){
-			set<int> neighbor;
-			in_adjList[to] = neighbor;
+			set<int> neighbors;
+			in_adjList[to] = neighbors;
 		}
 		in_adjList[to].insert(id);
 	}
@@ -43,21 +43,24 @@ void Graph::addEdge(Node* from, Node* to){
 	}
 
 	if(in_adjList.count(to_id) == 0){
-		set<int> neighbor;
-		in_adjList[to_id] = neighbor;
+		set<int> neighbors;
+		in_adjList[to_id] = neighbors;
 	}
 
 	in_adjList[to_id].insert(from_id);
 	from -> add_out_neighbor(*to);
 }
 
-void Graph::exportGraph(){
-	for(auto pair : in_adjList){
-		cout << pair.first << ": ";
+Node* Graph::getNode(int id){
+	return id_dict[id];
+}
 
-		for(auto nb : pair.second){
-			cout << nb << ", ";
+unordered_map<int, set<int> > Graph::exportGraph(){
+	for(auto v : vertices){
+		if(in_adjList.count(v) == 0){
+			set<int> neighbors;
+			in_adjList[v] = neighbors;
 		}
-		cout << endl;
 	}
+	return in_adjList;
 }

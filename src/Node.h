@@ -19,7 +19,7 @@ using namespace std;
 class Node {
 private:
 	int id;
-	int label = 0;
+	double label = 0.0;
 	set<int> out_neighbors;
 	unordered_map<string, string> features;
 	vector<string> featureFields;
@@ -27,7 +27,7 @@ private:
 public:
 	Node(int id);
 
-	void setLabel(int n){label = n;}
+	void setLabel(double n){label = n;}
 	void add_out_neighbor(Node to);
 	void setFeature(string field, string value);
 

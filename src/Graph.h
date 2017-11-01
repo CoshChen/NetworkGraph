@@ -26,9 +26,8 @@ public:
 	void addEdge(Node* from, Node* to);
 
 	set<int> getVertices(){return vertices;}
-	unordered_map<int, set<int> > get_in_adjList(){return in_adjList;}
-
-	void exportGraph();
+	Node* getNode(int id);
+	unordered_map<int, set<int> > exportGraph();
 };
 
 #endif /* GRAPH_H_ */
